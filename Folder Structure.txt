@@ -1,0 +1,16 @@
+secure-file-sharing-blockchain
+│
+├── backend
+│   ├── app.py
+│   ├── config.py
+│   ├── auth.py
+│   ├── encryption.py
+│   ├── ipfs.py
+│   ├── models.py
+│   └── requirements.txt
+│
+├── blockchain
+│   └── FileStorage.sol
+│
+├── frontend
+│   └── index.html

@@ -1,228 +1,70 @@
-# 🔐 Secure File Sharing with Blockchain
+# Getting Started with Create React App
 
-A full-stack, industry-level application that enables **secure file sharing using encryption, IPFS (decentralized storage), and blockchain technology**. This project ensures that files are tamper-proof, securely stored, and accessible only with a valid decryption key.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## 🚀 Features
+In the project directory, you can run:
 
-* 🔐 **User Authentication (JWT-based)**
-* 📤 **Secure File Upload with Encryption**
-* 📦 **Decentralized Storage using IPFS**
-* ⛓️ **Blockchain Integration (Ethereum + Smart Contract)**
-* 📁 **Personal File Dashboard**
-* 🔍 **Search & Filter Files**
-* 📄 **File Preview (PDF/Image)**
-* 📊 **Upload Progress Indicator**
-* 📋 **Copy Hash & Key**
-* 🎨 **Premium UI with Theme Switch**
-* 👤 **User Profile + Logout**
+### `npm start`
 
----
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🏗️ Tech Stack
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### 🔹 Frontend
+### `npm test`
 
-* React.js
-* Axios
-* React Icons
-* CSS (Glassmorphism UI)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 🔹 Backend
+### `npm run build`
 
-* Flask (Python)
-* Flask-CORS
-* Flask-JWT-Extended
-* Cryptography (Encryption)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 🔹 Blockchain
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-* Hardhat
-* Solidity Smart Contracts
-* Ethereum Local Network
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 🔹 Storage
+### `npm run eject`
 
-* IPFS (Kubo / Infura)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 🔹 Database (Optional Upgrade)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-* MongoDB
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
----
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## 📂 Project Structure
+## Learn More
 
-```
-secure-file-sharing-blockchain/
-│
-├── backend/
-│   ├── app.py
-│   ├── encryption.py
-│   ├── ipfs.py
-│   ├── blockchain.py
-│
-├── blockchain/
-│   ├── contracts/
-│   ├── scripts/
-│   ├── hardhat.config.js
-│
-├── frontend/
-│   ├── src/
-│   ├── App.js
-│
-└── README.md
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
----
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## ⚙️ Setup Instructions
+### Code Splitting
 
-### 🔧 1. Clone Repository
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-```bash
-git clone https://github.com/your-username/secure-file-sharing-blockchain.git
-cd secure-file-sharing-blockchain
-```
+### Analyzing the Bundle Size
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### 🔧 2. Backend Setup
+### Making a Progressive Web App
 
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate   # Windows
-pip install -r requirements.txt
-python app.py
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Backend runs on:
+### Advanced Configuration
 
-```
-http://127.0.0.1:5000
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
----
+### Deployment
 
-### 🔧 3. Blockchain Setup
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-```bash
-cd blockchain
-npm install
-npx hardhat node
-```
+### `npm run build` fails to minify
 
-Deploy contract:
-
-```bash
-npx hardhat run scripts/deploy.js --network localhost
-```
-
----
-
-### 🔧 4. IPFS Setup
-
-Download IPFS (Kubo) and run:
-
-```bash
-ipfs daemon
-```
-
----
-
-### 🔧 5. Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-Frontend runs on:
-
-```
-http://localhost:3000
-```
-
----
-
-## 🔑 API Endpoints
-
-| Method | Endpoint                     | Description           |
-| ------ | ---------------------------- | --------------------- |
-| POST   | `/register`                  | Register user         |
-| POST   | `/login`                     | Login & get JWT       |
-| POST   | `/upload`                    | Upload encrypted file |
-| GET    | `/download/<hash>?key=<key>` | Download file         |
-| GET    | `/myfiles`                   | Get user files        |
-
----
-
-## 🔐 How It Works
-
-1. User logs in (JWT authentication)
-2. File is encrypted using symmetric encryption
-3. Encrypted file is uploaded to IPFS
-4. IPFS hash is stored on blockchain
-5. User receives:
-
-   * IPFS Hash
-   * Encryption Key
-6. File can be downloaded and decrypted using the key
-
----
-
-## 🌍 Deployment
-
-* Frontend → Vercel
-* Backend → Render
-* IPFS → Infura / Public Gateway
-
----
-
-## 📸 Screenshots
-
-* Login Page
-* Dashboard
-* File Upload
-* File Preview
-
-*(Add your screenshots here)*
-
----
-
-## 👨‍💻 Author
-
-**Himanshu Rathore** 🚀
-
-* MCA Student
-* Full Stack Developer
-* AI/ML Enthusiast
-
----
-
-## ⭐ Future Enhancements
-
-* MongoDB Integration (persistent storage)
-* MetaMask Wallet Authentication
-* File Sharing via Link
-* Role-based Access Control
-* Cloud IPFS (Pinata/Infura)
-
----
-
-## 📜 License
-
-This project is for educational and portfolio purposes.
-
----
-
-## 💡 Final Note
-
-This project demonstrates a real-world implementation of:
-
-> 🔐 Secure Systems + ⛓️ Blockchain + 📦 Decentralized Storage
-
-A strong addition to any developer portfolio 🚀
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
